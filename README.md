@@ -72,8 +72,6 @@ Animals_database is database to store store somme informations like  id , name ,
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
 ## 🚀 Live Demo <a name="live-demo"></a>
 - Not available
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -90,7 +88,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/massazoum/Animals_database.git
 ```
 
 ### Install
@@ -116,23 +114,19 @@ Not available
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Massa zoumanigui**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
+- GitHub: [@massazoum](https://github.com/massazoum)
+- Twitter: [@zoumaniguimass1](https://twitter.com/zoumaniguimass1)
+- LinkedIn: [LinkedIn](www.linkedin.com/in/massa-zoumanigui-1aba4525a)
+- 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Behavior Notes]**
+- [ ] **[Photos and Media]**
+- [ ] **[Breeding Program]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
