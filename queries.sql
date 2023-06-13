@@ -43,7 +43,7 @@ SAVEPOINT my_savepoint;
 UPDATE animals
 SET weight_kg = weight_kg * -1;
 UPDATE 9
-vet_clinic=*# ROLLBACK TO my_savepoint;
+ROLLBACK TO my_savepoint;
 ROLLBACK
 UPDATE animals
 SET weight_kg = weight_kg * -1
