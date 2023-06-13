@@ -35,7 +35,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [Animals_database] <a name="about-project"></a>
-Animals_database is database to store store somme informations like  id , name , date_of_birth , escape_attempts ,neutered , weight_kg
+Animals_database is database to store store somme informations like id , name , date_of_birth , escape_attempts ,neutered , weight_kg
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
