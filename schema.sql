@@ -6,8 +6,6 @@
     escape_attempts INTEGER,
     neutered BOOLEAN,
     weight_kg DECIMAL(10,2));
-  
-ALTER TABLE animals
 ADD COLUMN species VARCHAR(255);
 
 CREATE TABLE owners (
@@ -21,6 +19,7 @@ CREATE TABLE species (
     name VARCHAR(255)
 );
 
+ALTER TABLE animals
 DROP COLUMN species,
 ADD COLUMN species_id INT REFERENCES species(id);
 ADD COLUMN owner_id INT REFERENCES owners(id);
