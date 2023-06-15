@@ -21,8 +21,6 @@ CREATE TABLE species (
     name VARCHAR(255)
 );
 
-ALTER TABLE animals
+DROP COLUMN species,
 ADD COLUMN species_id INT REFERENCES species(id);
-
-ALTER TABLE animals
 ADD COLUMN owner_id INT REFERENCES owners(id);
