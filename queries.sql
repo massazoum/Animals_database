@@ -17,9 +17,8 @@ SET species = 'pokemon'
 WHERE species IS NULL;
 
 COMMIT
- SELECT * FROM animals;
+SELECT * FROM animals;
 
- 
 BEGIN;
 BEGIN
 DELETE FROM animals;
@@ -69,3 +68,39 @@ FROM animals
 WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
 GROUP BY species;
 
+SELECT a.name
+FROM animals a
+JOIN owners o ON a.owner_id = a.id
+WHERE o.full_name = 'Melody Pond';
+
+SELECT a.name
+FROM animals a
+JOIN species s ON a.species_id = s.id
+WHERE s.name = 'Pokemon';
+
+SELECT o.full_name, a.name
+FROM owners o
+LEFT JOIN animals a ON a.id = a.owner_id;
+
+SELECT s.name AS species_name, COUNT(*) AS animal_count
+FROM animals a
+JOIN species s ON a.species_id = s.id
+GROUP BY s.name;
+
+SELECT a.name
+FROM animals a
+JOIN species s ON a.species_id = s.id
+JOIN owners o ON a.owner_id = s.id
+WHERE s.name = 'Digimon' AND o.full_name = 'Jennifer Orwell';
+
+SELECT a.name
+FROM animals a
+JOIN owners o ON a.owner_id = a.id
+WHERE o.full_name = 'Dean Winchester' AND a.escape_attempts = 0;
+
+SELECT o.full_name, COUNT(*) as animal_count
+FROM animals a
+JOIN owners o ON a.owner_id = a.id
+GROUP BY o.full_name
+ORDER BY animal_count DESC
+LIMIT 1;
