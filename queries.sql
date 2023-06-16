@@ -104,3 +104,67 @@ JOIN owners o ON a.owner_id = a.id
 GROUP BY o.full_name
 ORDER BY animal_count DESC
 LIMIT 1;
+
+
+--  
+SELECT a.name
+FROM visits v
+JOIN animals a ON v.animal_id = a.id
+WHERE v.vet_id = (SELECT id FROM vets WHERE name = 'William Tatcher')
+ORDER BY v.visit_date DESC
+LIMIT 1;
+
+SELECT COUNT(DISTINCT v.animal_id)
+FROM visits v
+WHERE v.vet_id = (SELECT id FROM vets WHERE name = 'Stephanie Mendez');
+
+SELECT v.name, v.name AS specialty
+FROM vets v
+LEFT JOIN specializations s ON v.id = s.vet_id
+ORDER BY v.name;
+
+SELECT a.name
+FROM visits v
+JOIN animals a ON v.animal_id = a.id
+WHERE v.vet_id = (SELECT id FROM vets WHERE name = 'Stephanie Mendez')
+AND v.visit_date BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT a.name, COUNT(*) AS visit_count
+FROM visits v
+JOIN animals a ON v.animal_id = a.id
+GROUP BY a.name
+ORDER BY visit_count DESC
+LIMIT 1;
+
+SELECT v.name AS vet_name, v.date_of_graduation, v.age, v.id AS vet_id
+FROM vets v
+JOIN visits vt ON vt.vet_id = v.id
+JOIN animals a ON vt.animal_id = a.id
+WHERE a.name = (SELECT name FROM animals WHERE id = (SELECT MIN(id) FROM animals))
+  AND v.name = 'Maisy Smith'
+ORDER BY vt.visit_date ASC
+LIMIT 1;
+
+SELECT a.name AS animal_name, v.name AS vet_name, v.date_of_graduation, v.age, vt.visit_date
+FROM visits vt
+JOIN animals a ON vt.animal_id = a.id
+JOIN vets v ON vt.vet_id = v.id
+ORDER BY vt.visit_date DESC
+LIMIT 1;
+
+SELECT COUNT(*) AS count
+FROM visits v
+JOIN vets ve ON v.vet_id = ve.id
+JOIN animals a ON v.animal_id = a.id
+LEFT JOIN specializations s ON ve.id = s.vet_id AND a.species_id = s.species_id
+WHERE s.vet_id IS NULL;
+
+SELECT a.name AS specialty, COUNT(*) AS visit_count
+FROM visits v
+JOIN animals a ON v.animal_id = a.id
+JOIN vets ve ON v.vet_id = ve.id
+JOIN specializations s ON ve.id = s.vet_id
+WHERE a.name = (SELECT name FROM animals WHERE id = (SELECT animal_id FROM visits WHERE vet_id = (SELECT id FROM vets WHERE name = 'Maisy Smith') ORDER BY visit_date ASC LIMIT 1))
+GROUP BY a.name
+ORDER BY visit_count DESC
+LIMIT 1;
